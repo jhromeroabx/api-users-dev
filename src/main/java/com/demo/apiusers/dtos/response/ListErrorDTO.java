@@ -1,6 +1,7 @@
 package com.demo.apiusers.dtos.response;
 
 import java.io.Serializable;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,10 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ErrorDTO implements Serializable {
+public class ListErrorDTO implements Serializable {
 
-   private String message;
-   private String code;
-   private Integer status;
+   private ErrorDTO error;
+   private List <String> errors;
 
 }
