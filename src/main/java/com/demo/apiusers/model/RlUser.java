@@ -22,6 +22,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "rl_user")
 public class RlUser {
+
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name = "id_rl_user")
@@ -31,6 +32,6 @@ public class RlUser {
    @Column(nullable = false, name = "user_password")
    private String password;
    @ManyToOne
-   @JoinColumn(name = "id_system_user_role")
+   @JoinColumn(name = "id_rl_user_role")
    private RlRole role;
 }
