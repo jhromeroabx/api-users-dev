@@ -14,7 +14,7 @@ public class UserNameNotFoundExceptionErrorHandler {
 
    @ExceptionHandler(UserNotFoundException.class)
    public ResponseEntity <ErrorDTO> UserNameNotFoundExceptionErrorHandler(UserNotFoundException e) {
-      log.error("non-existent user in the database", e);
+      log.error("userName not found", e);
       ErrorDTO error = ErrorDTO.builder()
                                .message(e.getMessage())
                                .code("USER_NOT_FOUND")

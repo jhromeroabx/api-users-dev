@@ -19,7 +19,7 @@ public class ValidationExceptionErrorHandler {
    public ResponseEntity <ListErrorDTO> validationErrorHandler(MethodArgumentNotValidException e) {
       List <String> errors = e.getBindingResult().getFieldErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).toList();
 
-      log.error("Validation error");
+      log.error("Validation error", e);
       ErrorDTO error = ErrorDTO.builder()
                                .message("Validation error")
                                .code("VALIDATION_ERROR")

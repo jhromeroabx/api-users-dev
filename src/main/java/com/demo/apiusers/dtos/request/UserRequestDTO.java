@@ -16,10 +16,8 @@ import lombok.NoArgsConstructor;
 public class UserRequestDTO {
 
    @NotBlank
-   @Email(message = "Email should be valid")
+   @Email(message = "mail is mandatory")
    private String email;
-   @NotBlank
-   @Size(min = 8, max = 20)
    @NotBlank(message = "Password is mandatory")
    @Size(min = 8, max = 20, message = "Password length should be between 8 and 20 characters")
    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+$", message =
