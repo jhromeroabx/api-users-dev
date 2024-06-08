@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RlUserRepository extends JpaRepository <RlUser, Long> {
 
-   @Query("SELECT r FROM RlUser r WHERE r.username = :email")
+   @Query("SELECT r FROM RlUser r WHERE r.userName = :email")
    RlUser findByUserName(@Param("email") String email);
 
 }

@@ -25,7 +25,7 @@ public class RlUserService {
       if (!user.getPassword().equals(request.getPassword())) {
          throw new PasswordErrorException("Wrong Password");
       }
-      return jwtUtils.getTokenResponseDTO(user.getUsername());
+      return jwtUtils.getTokenResponseDTO(user.getUserName());
    }
 
 }

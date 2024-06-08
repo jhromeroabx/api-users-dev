@@ -27,8 +27,8 @@ public class RlUser {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name = "id_rl_user")
    private Long id;
-   @Column(nullable = false, unique = true, name = "username")
-   private String username;
+   @Column(nullable = false, unique = true, name = "user_name")
+   private String userName;
    @Column(nullable = false, name = "user_password")
    private String password;
    @ManyToOne
