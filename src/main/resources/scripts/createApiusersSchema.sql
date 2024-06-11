@@ -1,19 +1,17 @@
-create schema rl_api_users;
-set search_path to rl_api_users;
+CREATE SCHEMA rl_api_users;
 
-create table rl_api_users.rl_user_role
-(
-    id_rl_user_role serial
-        primary key,
-    descripcion         varchar(100) not null
+SET search_path TO rl_api_users;
+
+CREATE TABLE rl_api_users.rl_user_role (
+    id_rl_user_role SERIAL PRIMARY KEY,
+    descripcion VARCHAR(100) NOT NULL
 );
 
-create table rl_api_users.rl_user
-(
-    id_rl_user      serial
-        primary key,
-    username            varchar(100) not null,
-    user_password       varchar(100) not null,
-    id_system_user_role integer      not null
-        references public.system_user_role
+CREATE TABLE rl_api_users.rl_user (
+    id_rl_user SERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    user_password VARCHAR(100) NOT NULL,
+    id_rl_user_role INTEGER NOT NULL,
+    CONSTRAINT fk_rl_user_role FOREIGN KEY (id_rl_user_role)
+    REFERENCES rl_api_users.rl_user_role (id_rl_user_role)
 );
