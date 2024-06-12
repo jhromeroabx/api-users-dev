@@ -1,5 +1,4 @@
 package com.demo.apiusers.handler;
-
 import com.demo.apiusers.dtos.response.ErrorDTO;
 import com.demo.apiusers.dtos.response.ListErrorDTO;
 import java.util.List;
@@ -10,11 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
 @Slf4j
 @ControllerAdvice
 public class ValidationExceptionErrorHandler {
-
    @ExceptionHandler(MethodArgumentNotValidException.class)
    public ResponseEntity <ListErrorDTO> validationErrorHandler(MethodArgumentNotValidException e) {
       List <String> errors = e.getBindingResult().getFieldErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).toList();
@@ -33,5 +30,4 @@ public class ValidationExceptionErrorHandler {
 
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(listError);
    }
-
 }

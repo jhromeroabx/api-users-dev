@@ -10,20 +10,15 @@ import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
 @Component
 @RequiredArgsConstructor
 public class JWTUtils {
-
    @Value("${jwt.secret}")
    private String secret;
    private final RlUserRepository rlUserRepository;
-
    public ResponseTokenDTO getTokenResponseDTO(String email) {
-
       RlUser user = rlUserRepository.findByUserName(email);
       Algorithm algorithm = Algorithm.HMAC256(secret);
-
       String jwtToken = JWT.create()
                            .withIssuer("Api Users")
                            .withSubject("Api Users Subject")
