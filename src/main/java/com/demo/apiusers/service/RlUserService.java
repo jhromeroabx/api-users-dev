@@ -37,7 +37,6 @@ public class RlUserService {
       if (rlUserRepository.findByUserName(request.getEmail()) != null) {
          throw new RepeatUserException("Repeat User");
       }
-
       RlRole role = rlRoleRepository.findById(1L).orElseThrow(() -> IdRoleNotFoundException
               .builder().message("Id Role Not Found").build());
       RlUser newUser = RlUser.builder()
@@ -45,10 +44,7 @@ public class RlUserService {
                              .password(request.getPassword())
                              .role(role)
                              .build();
-
       newUser = rlUserRepository.save(newUser);
-
       return jwtUtils.getTokenResponseDTO(newUser.getUsername());
-
    }
 }
