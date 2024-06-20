@@ -17,8 +17,10 @@ import lombok.NoArgsConstructor;
 public class UserRequestDTO implements Serializable {
 
    @NotBlank
-   @Email(message = "mail is mandatory")
+   @Pattern(regexp = "^[A-Za-z]+@(gmail.com|outlook.com|yahoo.com)$",
+           message = "{The email must contain letters at the beginning, @ and a valid domain (gmail.com, outlook.com or yahoo.com)}")
    private String email;
+
    @NotBlank(message = "Password is mandatory")
    @Size(min = 8, max = 20, message = "Password length should be between 8 and 20 characters")
    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+$", message =
