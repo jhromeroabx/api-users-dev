@@ -17,7 +17,7 @@ public class UserRequestDTO implements Serializable {
 
    @NotBlank
    @Pattern(regexp = "^[A-Za-z]+@[A-Za-z]+\\.[A-Za-z]{3}(\\.[A-Za-z]{2})?$", message =
-           "{The initial part and the domain must contain letters, one @, and the extension with a length of 3 characters}")
+           "{The initial part and the domain must contain letters, one @, and the extension with a length of 3 or 2 characters}")
    private String email;
 
    @NotBlank(message = "Password is mandatory")
