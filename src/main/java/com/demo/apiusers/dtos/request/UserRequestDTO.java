@@ -1,6 +1,5 @@
 package com.demo.apiusers.dtos.request;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -17,8 +16,8 @@ import lombok.NoArgsConstructor;
 public class UserRequestDTO implements Serializable {
 
    @NotBlank
-   @Pattern(regexp = "^[A-Za-z]+@(gmail.com|outlook.com|yahoo.com)$",
-           message = "{The email must contain letters at the beginning, @ and a valid domain (gmail.com, outlook.com or yahoo.com)}")
+   @Pattern(regexp = "^[A-Za-z]+@[A-Za-z]+\\.(edu\\.pe|[A-Za-z]{3})$", message =
+           "{The initial part and the domain must contain letters, one @, and the extension with a length of 3 characters}")
    private String email;
 
    @NotBlank(message = "Password is mandatory")
