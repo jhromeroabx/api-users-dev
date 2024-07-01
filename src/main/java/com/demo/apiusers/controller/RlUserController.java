@@ -15,10 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
 public class RlUserController {
+
    private final RlUserService rlUserService;
+
    @PostMapping("/auth/login")
    public ResponseTokenDTO login(@Valid @RequestBody UserRequestDTO request) {return rlUserService.login(request);
    }
+
    @PostMapping("/auth/register")
    public ResponseTokenDTO register(@Valid @RequestBody UserRequestDTO request) {
       return rlUserService.register(request);
