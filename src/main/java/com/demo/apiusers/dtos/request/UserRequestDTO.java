@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 public class UserRequestDTO implements Serializable {
 
    @NotBlank
-   @Pattern(regexp = "^[A-Za-z]+@[A-Za-z]+\\.[A-Za-z]{3}(\\.[A-Za-z]{2})?$", message =
-           "{The initial part and the domain must contain letters, one @, and the extension with a length of 2 or 3 characters}")
+   @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z]+\\.[A-Za-z]{3}(\\.[A-Za-z]{2})?$", message =
+           "{In the initial part you enter letters, numbers and at least one character, in the domain only letters and the extension can be 2 to 3 characters or combine both}")
    private String email;
 
    @NotBlank(message = "Password is mandatory")
