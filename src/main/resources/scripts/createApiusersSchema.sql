@@ -15,3 +15,12 @@ CREATE TABLE rl_api_users.rl_user (
     CONSTRAINT fk_rl_user_role FOREIGN KEY (id_rl_user_role)
     REFERENCES rl_api_users.rl_user_role (id_rl_user_role)
 );
+
+insert into
+  rl_api_users.rl_user_role (
+    descripcion
+  )
+values
+  (
+    'user'
+  );
