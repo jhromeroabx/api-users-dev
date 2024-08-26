@@ -15,7 +15,8 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .servers(Arrays.asList(
                         new Server().url("http://localhost:8080").description("API Users Dev Server"),
-                        new Server().url("https://api-users-dev.abexa.pe").description("API Users Deployed Server")
+                        new Server().url("https://api-users-dev.abexa.pe").description("API Users Deployed Server"),
+                        new Server().url("https://api-users-dev.onrender.com").description("API Users Deployed Server Render")
                 ));
     }
 }
