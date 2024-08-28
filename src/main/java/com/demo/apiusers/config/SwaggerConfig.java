@@ -1,11 +1,12 @@
 package com.demo.apiusers.config;
 
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.servers.Server;
+import java.util.Arrays;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Arrays;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.servers.Server;
 
 @Configuration
 public class SwaggerConfig {
@@ -15,8 +16,9 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .servers(Arrays.asList(
                         new Server().url("http://localhost:8080").description("API Users Dev Server"),
-                        new Server().url("https://api-users-dev.abexa.pe").description("API Users Deployed Server"),
-                        new Server().url("https://api-users-dev.onrender.com").description("API Users Deployed Server Render")
+                        new Server().url("https://api-users-dev.abexa.pe").description("API Users Deployed Server Abx"),
+                        new Server().url("https://api-users-dev.onrender.com").description("API Users Deployed Server Render"),
+                        new Server().url("https://tpcvmts9ri.us-east-2.awsapprunner.com").description("API Users Deployed Server AWS")
                 ));
     }
 }
