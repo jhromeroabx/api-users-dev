@@ -1,6 +1,6 @@
 {
     "ImageRepository": {
-      "ImageIdentifier": "148761658682.dkr.ecr.us-east-2.amazonaws.com/rla/api-users-dev:latest",
+      "ImageIdentifier": "148761658682.dkr.ecr.us-east-2.amazonaws.com/rla/api-users-dev:v2.0.0",
       "ImageRepositoryType": "ECR"
     }
   }
